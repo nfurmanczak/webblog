@@ -1,12 +1,8 @@
 ---
-title: "SPF"
+title: "Sender Policy Framework (SFP)"
 date: 2023-04-10T21:35:41+02:00
 draft: false
 tags: ["email", "DNS", "SPF"]
----
-
-## Sender Policy Framework (SPF)
-
 ---
 
 Bei SPF handelt es sich um einen Standard, um das Versenden von unautorisierten E-Mails zu verhindern. Hierbei wird ein TXT-Record (Text-Record) in die DNS-Zone eingetragen. Dieser TXT-Record enthält eine Liste von IP-Adressen oder anderen DNS-Namen, die für diese Domain E-Mails versenden dürfen.

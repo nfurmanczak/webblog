@@ -4,7 +4,7 @@ title = 'furmanczak.de'
 theme = 'blogTheme'
 summaryLength = '25'
 email = "nikolai.furmanczak@gmx.de"
-copyright = '© 2023 furmanczak.de'
+copyright = '© 2024 furmanczak.de'
 
 [taxonomies]
   tag = 'tags'

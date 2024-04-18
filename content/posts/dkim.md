@@ -1,12 +1,8 @@
 ---
-title: "DKIM Grundlagen"
+title: "DKIM mit Postfix und openDKIM"
 date: 2023-04-10T17:21:55+02:00
 draft: false
 tags: ["email", "crypto", "dkim"]
----
-
-## DKIM-Signatur via Postfix und openDKIM
-
 ---
 
 DKIM (DomainKeys Identify Mails) ermöglicht es, ausgehende E-Mails (Header und Body) mithilfe eines privaten Schlüssels zu signieren. Diese Signatur kann der Empfänger mit dem öffentlichen Schlüssel aus der DNS-Zone des Versenders überprüfen. Passt die Signatur, so wurde die E-Mail auf dem Weg vom Sender zum Empfänger (höchstwahrscheinlich) nicht durch Dritte verändert. Zudem sollte nur der vorgesehene und vertrauenswürdige Versandserver im Besitz des privaten Schlüssels sein. Die Signatur sollte allerdings nicht mit einer Verschlüsselung verwechselt werden. Bei einer Signatur wird lediglich der Hashwert einer Information verschlüsselt, nicht aber der Inhalt der E-Mail. Möchten Sie sensible Informationen per E-Mail versenden, sollten Sie auf eine Transportverschlüsselung ([TLS-Verbindung](https://de.wikipedia.org/wiki/Transport_Layer_Security) zwischen beiden E-Mail-Servern) und/oder Ende-zu-Ende-Verschlüsselung (z.B.: [GPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) oder [S/MIME](https://de.wikipedia.org/wiki/S/MIME)) setzen.
