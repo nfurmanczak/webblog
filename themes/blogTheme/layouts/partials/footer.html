@@ -1,0 +1,5 @@
+<div class="text-center">
+    {{ $title := print .Site.Copyright }}
+    {{ if .Site.Copyright }} {{ $title = .Site.Copyright  }} {{ else }}{{ .Site.Title }} {{ end }}
+    {{ $title }}
+</div>

@@ -1,0 +1,42 @@
+/* Stil für Codeblöcke */
+pre {
+    background-color: #000; /* Schwarzer Hintergrund */
+    color: #fff; /* Weiße Schrift */
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace; /* Console-Schriftarten */
+    font-size: 16px; /* Schriftgröße anpassen nach Bedarf */
+    padding: 10px; /* Abstand innen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    overflow-x: auto; /* Horizontales Scrollen ermöglichen */
+    text-indent: 0;
+}
+
+/* Stil für Überschriften */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 40px; /* Erhöht den oberen Rand */
+    margin-bottom: 20px; /* Optional: Kontrolliere auch den unteren Rand */
+}
+
+
+p {
+    margin-bottom: 20px; /* Vergrößert den unteren Rand jedes Absatzes */
+}
+
+/* Stil für alle Tabellen */
+table {
+    width: 100%; /* Stellt die volle Breite ein, um Überlauf zu vermeiden */
+    border-collapse: collapse; /* Entfernt doppelte Linien */
+    margin-bottom: 20px; /* Fügt einen Abstand nach der Tabelle hinzu */
+}
+
+/* Stil für Tabellenzellen */
+td, th {
+    border: 1px solid #ccc; /* Fügt Linien hinzu */
+    padding: 8px; /* Fügt Abstand innerhalb der Zellen hinzu */
+    text-align: left; /* Richtet den Text links aus */
+    vertical-align: top; /* Stellt sicher, dass der Text oben in der Zelle steht */
+}
+
+/* Stil für Tabellenköpfe */
+th {
+    background-color: #f4f4f4; /* Hintergrundfarbe für Kopfzeilen */
+}
