@@ -13,11 +13,11 @@ Zunächst prüfen wir, ob die installierte MariaDB oder MySQL Version auch TLS u
 MariaDB [(none)]> show global variables like '%ssl%';
 
 +---------------------+-----------------------------+
-| Variable_name | Value |
+| Variable_name       | Value                       |
 +---------------------+-----------------------------+
-| have_openssl | YES |
-| have_ssl | YES |
-| version_ssl_library | OpenSSL 1.1.1k 25 Mar 2021 |
+| have_openssl        | YES                         |
+| have_ssl            | YES                         |
+| version_ssl_library | OpenSSL 1.1.1k 25 Mar 2021  |
 +---------------------+-----------------------------+
 ```
 
