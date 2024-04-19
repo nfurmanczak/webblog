@@ -7,4 +7,4 @@ hidedate = true
 
 **E-Mail:** nikolai.furmanczak@gmx.de
 
-Diese Webseite nutzt keine Cookies. (Ehrlich)
+Diese Webseite nutzt keine Cookies.

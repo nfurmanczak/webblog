@@ -3,13 +3,12 @@ title: "DKIM mit Postfix und openDKIM"
 date: 2023-04-10T17:21:55+02:00
 draft: false
 tags: ["email", "crypto", "dkim"]
+toc: true
 ---
 
 DKIM (DomainKeys Identify Mails) ermöglicht es, ausgehende E-Mails (Header und Body) mithilfe eines privaten Schlüssels zu signieren. Diese Signatur kann der Empfänger mit dem öffentlichen Schlüssel aus der DNS-Zone des Versenders überprüfen. Passt die Signatur, so wurde die E-Mail auf dem Weg vom Sender zum Empfänger (höchstwahrscheinlich) nicht durch Dritte verändert. Zudem sollte nur der vorgesehene und vertrauenswürdige Versandserver im Besitz des privaten Schlüssels sein. Die Signatur sollte allerdings nicht mit einer Verschlüsselung verwechselt werden. Bei einer Signatur wird lediglich der Hashwert einer Information verschlüsselt, nicht aber der Inhalt der E-Mail. Möchten Sie sensible Informationen per E-Mail versenden, sollten Sie auf eine Transportverschlüsselung ([TLS-Verbindung](https://de.wikipedia.org/wiki/Transport_Layer_Security) zwischen beiden E-Mail-Servern) und/oder Ende-zu-Ende-Verschlüsselung (z.B.: [GPG](https://de.wikipedia.org/wiki/GNU_Privacy_Guard) oder [S/MIME](https://de.wikipedia.org/wiki/S/MIME)) setzen.
 
-
 Vielleicht ergibt sich nicht direkt der Nutzen von DKIM. Ein Ersatz für eine Verschlüsselung ist DKIM ja nicht. Vielmehr kann man DKIM als Erweiterung des Sender Policy Framework (SPF) ansehen. Bei SPF werden die IP-Adressen der E-Mail-Server in einem DNS-Eintrag verzeichnet. DKIM erweitert dies um einen öffentlichen Schlüssel. Damit kann der Domaininhaber festlegen, welche Server für den E-Mail-Versand dieser Domain autorisiert sind. Zudem ist DKIM de facto Voraussetzung, um später auch erfolgreich [DMARC](https://de.wikipedia.org/wiki/DMARC) einzusetzen.
-
 
 Mit DKIM haben wir nun eine weitere wichtige Information (den öffentlichen Schlüssel) in unserer DNS-Zone. Natürlich kann ein öffentlicher Schlüssel gefahrlos im Internet verteilt werden. Allerdings können DNS-Abfragen an verschiedenen Stellen manipuliert werden. Kurz gesagt: Ohne [DNSSEC](https://de.wikipedia.org/wiki/Domain_Name_System_Security_Extensions) gilt eine Antwort von einem DNS-Server als nicht vertrauenswürdig. Die DNS-Zone entwickelt sich also Stück für Stück zu einer sensiblen Informationsquelle, die geschützt werden soll. DNSSEC ist keine zwingende Voraussetzung für DKIM (oder SPF oder DMARC), allerdings ist DNSSEC immer eine sinnvolle Erweiterung, um auch Antworten vom DNS-Server zu signieren und vor Manipulation zu schützen.
 
@@ -35,12 +34,10 @@ Der Zusatz `_domainkey` darf nicht verändert werden und muss unbedingt vorhande
 
 Nach der Installation sollte ein Verzeichnis für den (oder die) openDKIM-Schlüssel eingerichtet werden. Der Verzeichnisname und Speicherort kann frei gewählt werden. Allerdings muss der Benutzer `opendkim` die entsprechenden Rechte haben, um den Schlüssel lesen zu dürfen.
 
-
-	mkdir -p /etc/opendkim/keys
-	cp key1.private /etc/opendkim/keys
-	chown -R opendkim:opendkim /etc/opendkim
-	chmod 600 /etc/opendkim/keys
-
+    mkdir -p /etc/opendkim/keys
+    cp key1.private /etc/opendkim/keys
+    chown -R opendkim:opendkim /etc/opendkim
+    chmod 600 /etc/opendkim/keys
 
 Die zentrale Konfigurationsdatei von openDKIM liegt unter `/etc/opendkim.conf`. Bei Debian und Ubuntu wird jedoch auch die Datei `/etc/default/opendkim` geladen. Diese besitzt zudem eine höhere Priorität gegenüber `/etc/opendkim.conf`. Man sollte sich also entscheiden, welche der beiden Dateien man nutzen möchte. Falls man die Datei im `default`-Verzeichnis nicht nutzen möchte, kann man dort alles bis auf den `RUNDIR`-Parameter löschen oder auskommentieren.
 
@@ -79,13 +76,12 @@ OversignHeaders=FROM
 
 Erwähnenswert sind hier die folgenden Parameter:
 
-| Parameter           | Funktion                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Socket              | Der Socket, über den Postfix auf openDKIM zugreift.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Canonicalization    | E-Mail-Server können manchmal eingehende E-Mails verändern. Diese Veränderungen können dazu führen, dass eine DKIM-Signatur ungültig wird. Um diesem Problem etwas vorzubeugen, definiert DKIM unterschiedliche Canonicalization-Verfahren. Die beiden Verfahren heißen "simple" und "relaxed". Je nachdem, ob diese auf einen E-Mail-Header oder Body angewendet werden, verhalten sie sich etwas unterschiedlich. Meine Empfehlung wäre hier unbedingt "relaxed/relaxed" zu verwenden. Das erste "relaxed" steht für den Header, das zweite für den Body.                                                                                                                |
-| SignatureAlgorithm  | Legt den verwendeten Hashalgorithmus und das kryptografische Verfahren für die Signatur fest. "rsa-sha256" sind der Standard und gute Werte. Andere Verfahren werden meist nicht unterstützt. Mittels `opendkim -V` kann man die unterstützten Algorithmen einsehen.                                                                                                                                                                                                                                                                                                                                                                                               |
-| OversignHeaders| Beim Oversigning wird ein Header mehrfach signiert, auch wenn ein Header nur einmal vorkommt. Die Signatur wird also einmal über den vorhandenen Header (und dessen Inhalt) gebildet und dann über einen nicht vorhandenen Header (also nichts). Wird die E-Mail nachträglich verändert und ein vorhandener Header noch einmal hinzugefügt, in der Hoffnung, Fehler in E-Mail-Clients auszunutzen, wird die DKIM-Signatur ungültig.|
-
+| Parameter          | Funktion                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Socket             | Der Socket, über den Postfix auf openDKIM zugreift.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Canonicalization   | E-Mail-Server können manchmal eingehende E-Mails verändern. Diese Veränderungen können dazu führen, dass eine DKIM-Signatur ungültig wird. Um diesem Problem etwas vorzubeugen, definiert DKIM unterschiedliche Canonicalization-Verfahren. Die beiden Verfahren heißen "simple" und "relaxed". Je nachdem, ob diese auf einen E-Mail-Header oder Body angewendet werden, verhalten sie sich etwas unterschiedlich. Meine Empfehlung wäre hier unbedingt "relaxed/relaxed" zu verwenden. Das erste "relaxed" steht für den Header, das zweite für den Body. |
+| SignatureAlgorithm | Legt den verwendeten Hashalgorithmus und das kryptografische Verfahren für die Signatur fest. "rsa-sha256" sind der Standard und gute Werte. Andere Verfahren werden meist nicht unterstützt. Mittels `opendkim -V` kann man die unterstützten Algorithmen einsehen.                                                                                                                                                                                                                                                                                        |
+| OversignHeaders    | Beim Oversigning wird ein Header mehrfach signiert, auch wenn ein Header nur einmal vorkommt. Die Signatur wird also einmal über den vorhandenen Header (und dessen Inhalt) gebildet und dann über einen nicht vorhandenen Header (also nichts). Wird die E-Mail nachträglich verändert und ein vorhandener Header noch einmal hinzugefügt, in der Hoffnung, Fehler in E-Mail-Clients auszunutzen, wird die DKIM-Signatur ungültig.                                                                                                                         |
 
 ### Postfix konfigurieren
 
@@ -123,17 +119,16 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=key1;
     XmwmvM3oUfQvQ==
 ```
 
-| Tag| Funktion|
-|---|---|
-| `v=1;`| Die genutzte DKIM-Version. Aktuell (2022) gibt es keine neue Version.|
-| `a=rsa-sha256;`| Der verwendete Algorithmus.|
-| `c=relaxed/relaxed;`|Das genutzte Canonicalization-Verfahren für den Header und Body.|
-| `d=example.com;`|Die DKIM-Domain, in der sich auch der öffentliche Schlüssel befindet.|
-| `s=key1;`| Der Selektor (Name) des Schlüssels.|
-| `h=From:FromSubject:Date:To;` | Enthält die signierten Header. Oversigned Header sind doppelt vorhanden in der Liste.|
-| `bh= ...;`| Hash des E-Mail-Bodys.|
-| `b= ...;`| Hash des E-Mail-Headers, einschließlich aller wichtigen Metadaten aus der DKIM-Signatur.|
-
+| Tag                           | Funktion                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
+| `v=1;`                        | Die genutzte DKIM-Version. Aktuell (2022) gibt es keine neue Version.                    |
+| `a=rsa-sha256;`               | Der verwendete Algorithmus.                                                              |
+| `c=relaxed/relaxed;`          | Das genutzte Canonicalization-Verfahren für den Header und Body.                         |
+| `d=example.com;`              | Die DKIM-Domain, in der sich auch der öffentliche Schlüssel befindet.                    |
+| `s=key1;`                     | Der Selektor (Name) des Schlüssels.                                                      |
+| `h=From:FromSubject:Date:To;` | Enthält die signierten Header. Oversigned Header sind doppelt vorhanden in der Liste.    |
+| `bh= ...;`                    | Hash des E-Mail-Bodys.                                                                   |
+| `b= ...;`                     | Hash des E-Mail-Headers, einschließlich aller wichtigen Metadaten aus der DKIM-Signatur. |
 
 ### DKIM-Alignment
 
@@ -149,15 +144,12 @@ Bei Mailinglisten, also dem Umleiten von E-Mails, kann es zu Problemen mit SPF u
 
 Beispiel einer ARC-Signatur (bestehend aus ARC-Seal, ARC-Message-Signature und ARC-Authentication-Results):
 
-
- 
-	ARC-Seal: i=1; a=rsa-sha256; t=1653370592; cv=none;
-	d=google.com; s=arc-20160816;
-	b=L7DGTN1C6tZYZ6J7x3WPntsi5vZsiw66J5UudCz6uyacYGlsfVG22narurUKoQRxZZDgKijBNaOxaRTIwi3oys2nqBAzFcbOY7bEWMGJh5fHqAPWDdUsI/6OpqtSXHkfrnFlycnaTWWM83R1gKZMuPdkcbLaaTX4Qv+syzW/vxsiBZlvpXwXW0Fn7Br5iFuyuHKwJWH4NbBl6ptCcNBnVovSffH0E0K3eL/KPUsLLXl4tdj8tpTmtyjBQ0cjMOqAdpfDQFOy9P/kJSGxtXAQNdrN6QoumqKIAxDnCSbzoODtSpMMpkzWgEMICOczNBNQ3WCsshvSeHQSKaH033I8ew==
+    ARC-Seal: i=1; a=rsa-sha256; t=1653370592; cv=none;
+    d=google.com; s=arc-20160816;
+    b=L7DGTN1C6tZYZ6J7x3WPntsi5vZsiw66J5UudCz6uyacYGlsfVG22narurUKoQRxZZDgKijBNaOxaRTIwi3oys2nqBAzFcbOY7bEWMGJh5fHqAPWDdUsI/6OpqtSXHkfrnFlycnaTWWM83R1gKZMuPdkcbLaaTX4Qv+syzW/vxsiBZlvpXwXW0Fn7Br5iFuyuHKwJWH4NbBl6ptCcNBnVovSffH0E0K3eL/KPUsLLXl4tdj8tpTmtyjBQ0cjMOqAdpfDQFOy9P/kJSGxtXAQNdrN6QoumqKIAxDnCSbzoODtSpMMpkzWgEMICOczNBNQ3WCsshvSeHQSKaH033I8ew==
     ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816; h=to:references:message-id:subject:date:mime-version:from:content-transfer-encoding:dkim-signature; bh=IbKKW+FuGfbd6G5AXON591T9sxFMyXkAMVqgA64URJM=;b=eJSRFRPxcn1hdLCidRGn/Y/RPTorPlB1tFwx8PIKywEMEkJNgRuEdOdPpu6z+/aqSC9cVy7mAeb64BP+tfFWaMJywh0DOYzAjUTrHALR3GgX54N427iRzV5/EdZ9TrtSc1TouMHWgO79wlq5jAfxOe4qt+SySq6nytrQREy1TkSNahg0kBkX5qqyJm3gIfP3NjQJJ2mfo86FP2S9pa9WlROiuBULZ88/J1Jc0yNGIQvH54lqMkmu3/KMrltn1IosVwa2m46IDATle9bXRY/OEnMf2atA+RjgVXjt4ObTPLDe+d0ZmFpd/8G7AgVN9vTvBuastIc20HDJtjk4KjjTNg==
     ARC-Authentication-Results: i=1; mx.google.com;
     dkim=pass header.i=@gmail.com header.s=20210112 header.b=qbAPGVPb; spf=pass (google.com: domain of versender@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=versender@gmail.com; dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
-        
 
 ### Monitoring für DKIM
 
@@ -165,25 +157,23 @@ Es ist durchaus sinnvoll, die DKIM-Infrastruktur zu überwachen. Das Prüfen des
 
 Das nachfolgende Bash-Skript erwartet drei Übergabeparameter und prüft mittels `dig`, ob der Schlüssel korrekt ist. Ein solches Skript könnte z.B. in Icinga eingebunden werden. Natürlich kann man anstelle der Übergabeparameter diese auch direkt statisch ins Skript schreiben. Alternativ bieten aber auch Sprachen wie Python oder Perl entsprechende Module, um DNS-Abfragen durchzuführen.
 
-
-	#!/bin/bash
+    #!/bin/bash
     if [ "$#" -ne 3 ]; then
     	exit 255
     fi
-    
+
     selector=$1
     domain=$2
     expected_public_key=$3
     #expected_public_key='"v=DKIM1; h=sha256; k=rsa;
     p=MIGfMA0GCSxruhUzopyrLWvJUnSe7zbfWl2m+GSf5ieMpDTESxkpj6iun6qEwsVUfc3ylw7C+Cy7L/ZpcWQWCLRaeMLxTZb7j2PY0nQB7/4DJUdWV5y0zPMwIDAQAB"'
-    
+
     public_key_in_dnszone=$(/usr/bin/dig -t TXT +short "$selector._domainkey.$domain")
     if [ "$expected_public_key" = "$public_key_in_dnszone" ]; then
     	exit 0
     else
     	exit 1
     fi
-    
 
 Für bestimmte E-Mail-Clients gibt es auch Plugins, um eine DKIM-Signatur zu überprüfen. Für Thunderbird kann ich das Tool DKIM-Verifier empfehlen. Ansonsten gibt es wenig weitere Tools, um automatisiert DKIM-Signaturen zu überwachen. Zudem muss ja auch eine signierte E-Mail verwendet werden. Man bräuchte also ein Test-E-Mail-Konto, welches signierte E-Mails empfängt. Diese E-Mails müsste man dann mit einer kleinen selbst geschriebenen Software überprüfen.
 
