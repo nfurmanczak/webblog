@@ -2,27 +2,33 @@ baseURL = 'http://furmanczak.de/'
 languageCode = 'de-de'
 title = 'furmanczak.de'
 theme = 'blogTheme'
-summaryLength = '25'
+summaryLength = '18'
 email = "nikolai.furmanczak@gmx.de"
 copyright = '© 2024 furmanczak.de'
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+hardWraps = true
+
+
 [taxonomies]
-  tag = 'tags'
+tag = 'tags'
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts"
-    weight = 2
 [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 4
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 3
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 4
