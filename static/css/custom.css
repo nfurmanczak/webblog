@@ -1,7 +1,7 @@
 pre {
     background-color: #000;
     color: #fff;
-    font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace; /* Console-Schriftarten */
+    font-family: "Consolas", "Monaco", "Lucida Console", monospace; /* Console-Schriftarten */
     font-size: 14px;
     padding: 10px;
     border-radius: 5px;
@@ -9,9 +9,14 @@ pre {
     text-indent: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 40px;
-    margin-bottom: 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 p {
@@ -24,7 +29,8 @@ table {
     margin-bottom: 20px;
 }
 
-td, th {
+td,
+th {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
