@@ -1,21 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
     {{- partial "head.html" . -}}
     <body>
         <div class="container">
-            <br>
+            <br />
             {{- partial "header.html" . -}}
-            <br><br>
+            <br /><br />
         </div>
         <div class="container">
-            <div class="shadow-sm p-3 mb-5 bg-body rounded">
-                {{- block "main" . }}{{- end }}
-            </div>
+            <div class="shadow-sm p-3 mb-4 bg-body rounded">{{- block "main" . }}{{- end }}</div>
         </div>
         <div class="container">
-            <div class="shadow-sm p-3 mb-5 bg-body rounded">
-                {{- partial "footer.html" . -}}
-            </div>
+            <div class="shadow-sm p-3 mb-5 bg-body rounded">{{- partial "footer.html" . -}}</div>
         </div>
     </body>
     {{- partial "script.html" . -}}
