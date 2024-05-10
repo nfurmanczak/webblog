@@ -11,15 +11,23 @@ In der schnelllebigen IT-Branche ist Wissen mittlerweile die wertvollste Ressour
 
 #### Wissen
 
-Bevor wir uns mit Wissensmanagement befassen, sollten wir zunächst definieren, was überhaupt unter Wissen zu verstehen ist. Wissen ist mehr als reine Information oder Daten. Es ist die Verknüpfung von Informationen mit Interpretationen, Kontexten und Erfahrungswerten. Wissen entsteht erst durch praktische Anwendung von Informationen. Es ist wichtig, dass Informationen und Wissen nicht verwechselt werden.
+Bevor wir uns mit Wissensmanagement befassen, sollten wir zunächst definieren, was überhaupt unter Wissen zu verstehen ist. Wissen ist mehr als reine Information oder Daten. Es ist die Verknüpfung von Informationen mit Interpretationen, Kontexten und Erfahrungswerten. Wissen entsteht erst durch praktische Anwendung von Informationen. Es ist wichtig, dass Informationen und Wissen nicht verwechselt werden. Modelle wie die Wissenstreppe von [Klaus North](http://www.north-online.de/) verdeutlichenden den Prozess wie aus einzelnen Daten schlussendlich Wissen erzeugt wird.
 
-Wissen wird dabei oft in **explizit** und **implizit** unterteilt. Explizites Wissen ist greifbar und kann vom Träger ohne Probleme weitergegeben werden bzw. verschriftlicht werden. Klassische Beispiele für explizites Wissen sind die schriftliche Dokumentation über einen Prozess oder Quellcode. Implizites Wissen hingegen ist nicht greifbar und kann nicht einfach weitergegeben werden. Oft ist sich der Träger auch nicht über dieses Wissen bewusst. Aus diesem Grund wird implizites Wissen auch oft unbewusstes Wissen genannt. Implizites Wissen kann analytisches Verständnis sein, Best Practices aus Erfahrungswerten oder einfach das Verständnis, was ein Kunde braucht und kaufen möchte. In der Regel ist das meiste Wissen im Unternehmen implizit und nicht explizit [2].
+<figure style="text-align: center;">
+  <img src="/images/wissenstreppe_north.jpg" alt="Wissenstreppe nach Klaus North" style="max-width: 100%; height: auto; width: auto; display: block; margin: auto;">
+  <figcaption>Abbildung 1: Wissenstreppe nach Klaus North, Eigene Darstellung</figcaption>
+</figure>
 
-Reinmann-Rothmeier [3] nutzen einen anderen, aber aus meiner Sicht passenden Vergleich. Laut ihm kann Wissen wie Wasser drei (Aggregat-)Zustände haben: gefroren, flüssig und gasförmig. Gefrorenes Wissen ist greifbar und entspricht explizitem Wissen. Flüssiges Wissen ist greifbar, zerrinnt einem aber zwischen den Händen, wenn es nicht festgehalten (dokumentiert) wird. Gasförmiges Wissen ist implizites Wissen, es verteilt sich überall, ist oft nicht sichtbar und nicht greifbar. Die Herausforderung ist nun, implizites Wissen zu identifizieren und in explizites umzuwandeln.
+North [2] hat die Wissenstreppe in bestimmten Details immer wieder den aktuellen Entwicklungen angepasst. Im Dokument _Wissen 4.0 – Wissensmanagement im digitalen Wandel_ erwähnt North Big Data, E-Learning oder Collaboration Software als mögliche Tools um Wissen zu erzeugen.
 
-Ein bekanntes Modell um implizites in explizites Wissen umzuwandeln ist das SECI-Modell [4] von Ikujiro Nonaka und Hirotaka Takeuchi. SECI steht für die vier Phasen des Modells:
+Wissen wird dabei oft in **explizit** und **implizit** unterteilt. Explizites Wissen ist greifbar und kann vom Träger ohne Probleme weitergegeben werden bzw. verschriftlicht werden. Klassische Beispiele für explizites Wissen sind die schriftliche Dokumentation über einen Prozess oder Quellcode. Implizites Wissen hingegen ist nicht greifbar und kann nicht einfach weitergegeben werden. Oft ist sich der Träger auch nicht über dieses Wissen bewusst. Aus diesem Grund wird implizites Wissen auch oft unbewusstes Wissen genannt. Implizites Wissen kann analytisches Verständnis sein, Best Practices aus Erfahrungswerten oder einfach das Verständnis, was ein Kunde braucht und kaufen möchte. In der Regel ist das meiste Wissen im Unternehmen implizit und nicht explizit [3].
+
+Reinmann-Rothmeier [4] nutzen einen anderen, aber aus meiner Sicht passenden Vergleich. Laut ihm kann Wissen wie Wasser drei (Aggregat-)Zustände haben: gefroren, flüssig und gasförmig. Gefrorenes Wissen ist greifbar und entspricht explizitem Wissen. Flüssiges Wissen ist greifbar, zerrinnt einem aber zwischen den Händen, wenn es nicht festgehalten (dokumentiert) wird. Gasförmiges Wissen ist implizites Wissen, es verteilt sich überall, ist oft nicht sichtbar und nicht greifbar. Die Herausforderung ist nun, implizites Wissen zu identifizieren und in explizites umzuwandeln.
+
+Ein bekanntes Modell um implizites in explizites Wissen umzuwandeln ist das SECI-Modell [5] von Ikujiro Nonaka und Hirotaka Takeuchi. SECI steht für die vier Phasen des Modells:
 
 <figure>
+  <figcaption>Abbildung 2: SECI-Modell, Eigene Darstellung</figcaption>
   <img src="/images/seci_modell.jpg" alt="SECI-Modell mit Wissensspiraled" width="300" style="float:right; margin-left:30px;">
 </figure>
 
@@ -35,19 +43,20 @@ Das SECI-Modell ist natürlich nicht das einzige Modell welches sich mit Wissens
 
 #### Was ist Wissensmanagement?
 
-Wissensmanagement umfasst alle Prozesse und Praktiken zur systematischen Erfassung, Speicherung, Verteilung und Nutzung von Wissen innerhalb einer Organisation. Das Ziel ist es, den reibungslosen Fluss von Informationen und Erfahrungswissen zwischen Mitarbeitern, Teams und Abteilungen zu gewährleisten. Ein gut strukturiertes Wissensmanagement erhöht die Effizienz, verhindert Doppelarbeit und beschleunigt Lernprozesse.
+Wissensmanagement umfasst alle Prozesse und Praktiken zur systematischen Erfassung, Speicherung, Verteilung und Nutzung von Wissen innerhalb einer Organisation. Das Ziel ist es, den reibungslosen Fluss von Informationen und Erfahrungswissen zwischen Mitarbeitern, Teams und Abteilungen zu gewährleisten. Ein gut strukturiertes Wissensmanagement erhöht die Effizienz, verhindert Doppelarbeit und beschleunigt Lernprozesse. Eine Teilkategorie des Wissensmanagements ist das \*\*Informationsmanagement\*\*, welches sich, wie der Name vermuten lässt, mit dem Sammeln, Speichern und Verteilen von Informationen befasst. Wikis sind in der IT wohl eine der bekanntesten und meistgenutzten Informationssysteme, wenn es um das Speichern von Informationen geht. Das größte Problem ist, dass das Erstellen und Pflegen von Dokumentationen ein sehr zeitintensiver und aufwendiger Prozess ist. Oft ist die Dokumentation veraltet, weil sich niemand zuständig fühlt, keiner Lust hat oder schlichtweg niemand die Zeit findet. Deswegen sollte bei Projekten oder Aufgaben Zeit einkalkuliert werden, um die Dokumentation anzulegen oder zu aktualisieren. Empfehlenswert ist, dass das gesamte Team nach einem Projekt gemeinsam die bestehende Dokumentation sichtet und anpasst. Im Anschluss sollten alle anderen betroffenen Personen eine Info bekommen, dass die Dokumentation angepasst wurde. Dies ermöglicht, dass alle Personen sich mit der Dokumentation beschäftigen und Unklarheiten direkt geklärt werden. Um die zukünftige Arbeit zu reduzieren, sollte man die (schriftliche) Dokumentation auf ein Minimum begrenzen. Konzepte wie die Wissenstreppe verdeutlichen, dass nicht alle Informationen erfasst und verschriftlicht werden können.
+
+Als Best Practice ist es wichtig, dass alle Informationen an einem zentralen Punkt gespeichert werden; Fragmentierungen sollten dringend vermieden werden. Oft entsteht eine Fragmentierung jedoch auch unbewusst, und Informationen werden dort gespeichert, wo sie eigentlich nicht hingehören. Klassische Beispiele hierfür sind E-Mails, Chats, Git-Commits oder Kommentare im Quellcode.
 
 #### Warum ist Wissensmanagement in der IT wichtig?
 
-In IT-Unternehmen gibt es einige zentrale Herausforderungen, die ein strukturiertes
-Wissensmanagement adressieren kann:
+In IT-Unternehmen gibt es einige zentrale Herausforderungen, die ein strukturiertes Wissensmanagement adressieren kann:
 
 - **Wissensabfluss vermeiden**: Gerade in der IT herrscht häufig eine hohe Mitarbeiterfluktuation. Wenn erfahrene Mitarbeiter das Unternehmen verlassen, geht wertvolles Wissen verloren. Dokumentiertes Wissen reduziert dieses Risiko.
 - **Silodenken abbauen**: In größeren IT-Teams oder verteilten Organisationen kann leicht ein Silodenken entstehen, bei dem Wissen und Erfahrungen in Abteilungen oder Gruppen eingeschlossen bleibt. Aktives Wissensmanagement fördert den unternehmensweiten Wissensaustausch.
 - **Effizienz und Qualität steigern**: Redundante Arbeit und das Rad neu erfinden kosten Zeit und Geld. Ein zentraler Wissenspool mit bewährten Lösungen, Best Practices und Lessons Learned beschleunigt Prozesse und erhöht die Qualität der Arbeitsergebnisse.
 - **Innovation fördern**: Eine Kultur der offenen Wissensteilung regt den Ideenaustausch an und ermöglicht es, Erkenntnisse aus unterschiedlichen Bereichen zusammenzuführen. Dies treibt die Entwicklung neuer Lösungen und Produkte voran.
 
-#### Wissensmanagement in der IT-Praxis
+#### Praktische Umsetzung
 
 Theoretisch klingt Wissensmanagement sinnvoll, aber wie setzen Sie es erfolgreich in Ihrem Unternehmen um? Hier einige praxiserprobte Ansätze:
 
@@ -63,9 +72,10 @@ Die größte Herausforderung für erfolgreiches Wissensmanagement ist die Etabli
 
 [1] Schauer, H. (2004) Impulse der Erkenntnistheorie und des Wissenschaftsbetriebs für eine betriebliche Wissensbewertung, In: Wissenschaftstheorie in Okonomie und Wirtschaftsinformatik, Ulrich Frank (Hrsg.)
 
-[2] Giwoleit, D. (2015) Bridging The Gap: Der Weg vom impliziten zum expliziten Wissen durch semantische Spracherkennung auf Basis eines ontologischen
-Wissensmanagementsystems, Abschlussarbeit (MA.), Universität Kiel
+[2] North, K. (2018) Wissen 4.0 – Wissensmanagement im digitalen Wandel, In: HMD Praxis der Wirtschaftsinformatik Ausgabe 55/2018
 
-[3] Reinmann-Rothmeier, G. (2001) Wissen managen: Das Münchener Modell, In: Forschungsbericht Nr. 131
+[3] Giwoleit, D. (2015) Bridging The Gap: Der Weg vom impliziten zum expliziten Wissen durch semantische Spracherkennung auf Basis eines ontologischen Wissensmanagementsystems, Abschlussarbeit (MA.), Universität Kiel
 
-[4] Bartelsen, J. und Brauer, J. (2010) Kooperatives Lernen mit einem Wiki, Arbeitspapiere der Nordakademie Nr. 2010-01
+[4] Reinmann-Rothmeier, G. (2001) Wissen managen: Das Münchener Modell, In: Forschungsbericht Nr. 131
+
+[5] Bartelsen, J. und Brauer, J. (2010) Kooperatives Lernen mit einem Wiki, Arbeitspapiere der Nordakademie Nr. 2010-01
