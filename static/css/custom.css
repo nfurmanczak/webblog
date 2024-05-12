@@ -19,6 +19,33 @@ h6 {
     margin-bottom: 15px;
 }
 
+h1 {
+    font-size: 20px; /* Größe für h1 */
+}
+
+h2 {
+    font-size: 18px; /* Größe für h2 */
+}
+
+h3 {
+    font-size: 16px; /* Größe für h3 */
+}
+
+h4 {
+    font-size: 14px; /* Größe für h3 */
+}
+
+h5 {
+    font-size: 12px; /* Größe für h3 */
+}
+
+h6 {
+    font-size: 10px; /* Größe für h3 */
+}
+
+/* Weiter so für h4, h5, h6 nach Bedarf */
+
+
 p {
     margin-bottom: 20px;
 }

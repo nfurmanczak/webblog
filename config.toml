@@ -5,8 +5,13 @@ theme = 'blogTheme'
 summaryLength = '18'
 email = "nikolai.furmanczak@gmx.de"
 copyright = '© 2024 furmanczak.de'
+tableOfContents = true
 
 [markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    ordered = true
+    endLevel = 6
 [markup.goldmark]
 [markup.goldmark.renderer]
 hardWraps = true
