@@ -1,3 +1,7 @@
+body {
+    background-color: #f8f9fa;
+}
+
 pre {
     background-color: #000;
     color: #fff;
@@ -7,16 +11,6 @@ pre {
     border-radius: 5px;
     overflow-x: auto;
     text-indent: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 35px;
-    margin-bottom: 15px;
 }
 
 h1 {
@@ -29,6 +23,7 @@ h2 {
 
 h3 {
     font-size: 16px; /* Größe für h3 */
+    margin-top: 5px;
 }
 
 h4 {
@@ -36,18 +31,17 @@ h4 {
 }
 
 h5 {
-    font-size: 14px; /* Größe für h3 */
+    font-size: 14px;
 }
 
 h6 {
     font-size: 14px; /* Größe für h3 */
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
-/* Weiter so für h4, h5, h6 nach Bedarf */
-
-
 p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 table {

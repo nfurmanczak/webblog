@@ -3,11 +3,11 @@ title = "Kontakt"
 hidedate = true
 +++
 
-Nikolai Furmanczak<br>
-Osteroder Str. 7<br>
-40595 Duesseldorf<br>
-Deutschland<br>
+Nikolai Furmanczak
+Osteroder Str. 7
+40595 Duesseldorf
+Deutschland
 
-**nikolai.furmanczak {aet} gmx . de**
+**nikolai {aet} furmanczak . de**
 
 Diese Webseite nutzt keine Cookies.

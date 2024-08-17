@@ -8,11 +8,21 @@ toc: true
 
 ---
 
-In der schnelllebigen IT-Branche ist Wissen mittlerweile die wertvollste Ressource geworden. Jeder Beruf in der IT, egal ob Administrator oder Entwickler, ist ein wissensintensive Tätigkeit. Effizientes Wissensmanagement ist ein wichtiger Schlüssel zu Produktivität, Qualität und Innovation. Problematisch ist, dass sich der Nutzen vom Wissensmanagement nicht immer in harten Fakten messen lässt [1].
+In der schnelllebigen IT-Branche ist Wissen mittlerweile die wertvollste Ressource geworden. Jeder Beruf in der IT, egal ob Administrator oder Entwickler, ist ein wissensintensive Tätigkeit. Gleichzeitig ändern sich die Trends und technologien in der IT rassend schnell. Effizientes Wissensmanagement kann ein wichtiger Schlüssel zu Produktivität, Qualität und Innovation. Problematisch ist, dass sich der Nutzen vom Wissensmanagement nicht immer in harten Fakten messen lässt [1].
 
 # Wissen
 
-Bevor wir uns mit Wissensmanagement befassen, sollten wir zunächst definieren, was überhaupt unter Wissen zu verstehen ist. Wissen ist mehr als reine Information oder Daten. Es ist die Verknüpfung von Informationen mit Interpretationen, Kontexten und Erfahrungswerten. Wissen entsteht erst durch praktische Anwendung von Informationen. Es ist wichtig, dass Informationen und Wissen nicht verwechselt werden. Modelle wie die Wissenstreppe von [Klaus North](http://www.north-online.de/) verdeutlichenden den Prozess wie aus einzelnen Daten schlussendlich Wissen erzeugt wird.
+Bevor wir uns mit Wissensmanagement befassen, sollten wir zunächst definieren, was überhaupt unter Wissen zu verstehen ist. 
+
+Leider gibt keine einheitliche Definition zu dem Begriff Wissen. Viel mehr ist die Definition vom Blickwinkel auf das Thema abhängig. Es ist wichtig zu verstehen das Wissen mehr als nur Informationen oder Daten sind. Es ist die Verknüpfung von Informationen mit Interpretationen, Kontexten und Erfahrungswerten. 
+
+
+## Wissenstreppe von North 
+
+Modelle wie die Wissenstreppe von [Klaus North](http://www.north-online.de/) verdeutlichenden den Prozess wie aus einzelnen Daten schlussendlich Wissen entsteht.
+
+
+Wissen entsteht erst durch praktische Anwendung von Informationen. Es ist wichtig, dass Informationen und Wissen nicht verwechselt werden. Modelle wie die Wissenstreppe von [Klaus North](http://www.north-online.de/) verdeutlichenden den Prozess wie aus einzelnen Daten schlussendlich Wissen erzeugt wird.
 
 <figure style="text-align: center;">
   <img src="/images/wissenstreppe_north.jpg" alt="Wissenstreppe nach Klaus North" style="max-width: 70%; height: auto; width: auto; display: block; margin: auto;">
@@ -21,9 +31,13 @@ Bevor wir uns mit Wissensmanagement befassen, sollten wir zunächst definieren, 
 
 North [2] hat die Wissenstreppe in bestimmten Details immer wieder den aktuellen Entwicklungen angepasst. Im Dokument _Wissen 4.0 – Wissensmanagement im digitalen Wandel_ erwähnt North Big Data, E-Learning oder Collaboration Software als mögliche Tools um Wissen zu erzeugen.
 
+## Explizites vs. implizites Wissen
+
 Wissen wird dabei oft in **explizit** und **implizit** unterteilt. Explizites Wissen ist greifbar und kann vom Träger ohne Probleme weitergegeben werden bzw. verschriftlicht werden. Klassische Beispiele für explizites Wissen sind die schriftliche Dokumentation über einen Prozess oder Quellcode. Implizites Wissen hingegen ist nicht greifbar und kann nicht einfach weitergegeben werden. Oft ist sich der Träger auch nicht über dieses Wissen bewusst. Aus diesem Grund wird implizites Wissen auch oft unbewusstes Wissen genannt. Implizites Wissen kann analytisches Verständnis sein, Best Practices aus Erfahrungswerten oder einfach das Verständnis, was ein Kunde braucht und kaufen möchte. In der Regel ist das meiste Wissen im Unternehmen implizit und nicht explizit [3].
 
 Reinmann-Rothmeier [4] nutzt einen anderen, aber aus meiner Sicht passenden Vergleich. Laut Reinmann-Rothmeier kann Wissen wie Wasser drei (Aggregat-)Zustände haben: gefroren, flüssig und gasförmig. Gefrorenes Wissen ist greifbar und entspricht explizitem Wissen. Flüssiges Wissen ist greifbar, zerrinnt einem aber zwischen den Händen, wenn es nicht festgehalten (dokumentiert) wird. Gasförmiges Wissen ist implizites Wissen, es verteilt sich überall, ist oft nicht sichtbar und nicht greifbar. Die Herausforderung ist nun, implizites Wissen zu identifizieren und in explizites umzuwandeln.
+
+## SECI-Modell nach Nonaka u. Takeuchi
 
 Ein bekanntes Modell um implizites in explizites Wissen umzuwandeln ist das SECI-Modell [5] von Ikujiro Nonaka und Hirotaka Takeuchi. SECI steht für die vier Phasen des Modells:
 
